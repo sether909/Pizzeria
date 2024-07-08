@@ -1,0 +1,19 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Pizzeria
+{% endblock %}
+{% load static %}
+
+
+{% block content %}
+  <link rel="stylesheet" href="{% static 'home_animations.css' %}">
+  <div class="animated-content">
+    <h1>Welcome to Pizzeria!</h1>
+  </div>
+  <body>Delicious pizzas made with fresh ingredients, served with a smile.</body>
+
+
+  <p>Check out all our <a href="pizzas/">pizzas!</a></p>
+  
+{% endblock %}

@@ -1,0 +1,10 @@
+.animated-content {
+    opacity: 0;
+    animation: fadeInFadeOut 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes fadeInFadeOut {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    50% { opacity: 0; }
+  }

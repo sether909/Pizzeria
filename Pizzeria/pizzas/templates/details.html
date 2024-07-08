@@ -1,0 +1,41 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Details about {{ pizza.pizza_name }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ pizza.pizza_name }}</h1>
+    <img src="{{ pizza.image.url }}" alt="{{ pizza.pizza_name }} Pizza Image">
+    
+    <p>Toppings:</p>
+    <ul>
+        {% for topping in pizza_toppings %}
+            <li>
+                {{ topping.topping_name }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Comments</h2>
+    {% if comments %}
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <strong>{{ comment.name }}:</strong> {{ comment.comment_text }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No one has commented yet!</p>
+    {% endif %}
+
+    <h2>Leave a Comment</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit Comment</button>
+    </form>
+
+    <p>Back to <a href="/pizzas">Pizzas</a></p>
+{% endblock %}

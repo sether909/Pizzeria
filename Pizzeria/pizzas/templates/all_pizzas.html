@@ -1,0 +1,17 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Pizzeria - Pizza Menu
+{% endblock %}
+
+
+{% block content %}
+    <p><a href="/">HOME</a></p>
+
+    <h1>Pizzeria - Pizza Menu</h1>
+    <ul>
+        {% for x in pizza_list %}
+        <li><a href="details/{{ x.id }}">{{ x.pizza_name}}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
